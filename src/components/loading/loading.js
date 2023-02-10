@@ -1,6 +1,7 @@
 import React from 'react'
-import { Spinner } from 'react-bootstrap';
 import "./loading.css";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 export default class Loading extends React.Component {
@@ -12,7 +13,7 @@ export default class Loading extends React.Component {
 
         }
     }
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
        if( nextProps.show !== this.state.show ) {
         this.setState({show: nextProps.show});
        }
@@ -22,7 +23,7 @@ export default class Loading extends React.Component {
            <>
            {this.state.show ? (
             <div id='loading-backdrop'>
-                <Spinner animation='border' variant='primary' />
+                <Spinner animation="grow" />
             </div>
            ): null}
            </>

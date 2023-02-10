@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 import {
  
   Navbar,
@@ -33,9 +34,7 @@ export default class NavBar extends React.Component {
             <Navbar.Brand href="#home">
               Users<span id="usuario-sub-bram"></span>
               <Row>
-               
-               
-                    
+              
                   </Row>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

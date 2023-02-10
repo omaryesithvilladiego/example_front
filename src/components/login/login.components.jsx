@@ -8,6 +8,8 @@ import { calculaExtreaccionSesion } from '../helper/helper';
 import axios from "axios";
 import app from  '../app.json';
 import Loading from "../loading/loading";
+import { Link } from 'react-router-dom';
+
 
 const cookies = new Cookies();
 const {APIHOST} = app;
@@ -57,8 +59,11 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <Container className="login-contenedor" id="login-container">
+      <Container className="login-contenedor block p-6 rounded-lg shadow-lg bg-white max-w-md" id="login-container">
 
+          <div>
+
+       
       
         
         <Loading  show={this.state.loading} />
@@ -102,6 +107,12 @@ export default class Login extends React.Component {
                 {/* {this.state.pass} */}
                 
               </Form.Group>
+
+              <div className='register'>
+
+                <h6>Si no te has registrado, hazlo presionando <span><Link to="/registro">clic here</Link></span></h6>
+
+              </div>
               <Button onClick={() => {
                 this.iniciarSesion();
               }} 
@@ -111,10 +122,14 @@ export default class Login extends React.Component {
             </Form>
           </Col>
         </Row>
+        </div>
+        
       </Container>
     );
   }
 }
+
+
 
 // <Container
 //   className="login-contenedor"
