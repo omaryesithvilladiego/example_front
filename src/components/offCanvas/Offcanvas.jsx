@@ -28,7 +28,7 @@ export function OffCanvas() {
           <Offcanvas   show={show} onHide={handleClose}>
             <Canvas >
             <Offcanvas.Header className="canvas-header"  closeButton>
-              <Offcanvas.Title>TransDigitalCoop</Offcanvas.Title>
+              <Offcanvas.Title>TransDigitalCoop cambio</Offcanvas.Title>
             </Offcanvas.Header>
           
             <Offcanvas.Body>
