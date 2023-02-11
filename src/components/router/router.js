@@ -4,6 +4,7 @@ import Login from "../login/login.components";
 import Inicio from '../index';
 import PrivateRouter from '../auth/private.router';
 import EmpleadosBuscar from '../empleados/emplados.component';
+import Registro from "../registro.component"
 export default function AppRoutes() {
   return (
    
@@ -12,6 +13,7 @@ export default function AppRoutes() {
       <Route exact path={["/usuarios/login","/login"]} component={ Login }></Route>
       <PrivateRouter exact path="/empleados" component={ EmpleadosBuscar } />
       <Route exact path="/" component={ Inicio }></Route>
+      <Route exact path="/registro" component={ Registro }></Route>
       <Route exact path="/*" component={ () => (<h1 style={{marginTop:300, textAlign:'center'}}>
         page not found
       </h1>) }></Route>
