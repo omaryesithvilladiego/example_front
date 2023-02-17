@@ -1,0 +1,51 @@
+.main-contenido {
+    background: radial-gradient(rgba(232, 94, 92, 0.2) 2px, transparent 2px) 0 0,
+            radial-gradient(rgba(232, 94, 92, 0.2) 2px, transparent 2px) 25px 25px;
+background-color: #ffffff;
+background-size: 50px 50px;
+
+    border: none;
+    border-radius: 0.4rem;
+    margin-bottom: 0;
+   
+}
+
+
+
+.division:hover {
+    background-color: #228B22;
+  
+}
+
+.division {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color:  #000080;
+    
+
+}
+
+
+
+.despliegue {
+    background-color: #FFDF00;
+    color: black;
+    margin: 0;
+    padding: 0;
+  
+}
+
+.tittle-servicios {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold
+}
+
+.icon-servicios {
+    font-size: 2rem;
+    color: aliceblue;
+}
+
