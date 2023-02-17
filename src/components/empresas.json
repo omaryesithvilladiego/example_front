@@ -1,0 +1,4 @@
+{
+    "APIEMPRESA":"http://localhost:3001/empresas",
+    "APIUSUARIO":"http://localhost:3001/usuarios"
+}

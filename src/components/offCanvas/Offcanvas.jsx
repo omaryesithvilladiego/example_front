@@ -2,11 +2,21 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Accordion, AccordionItem, AccordionTitle } from "../accordeon.component";
+import "./offcanva.css"
+import {MdOutlineCardTravel} from "react-icons/md"
+import {GrContact} from "react-icons/gr"
+ 
 
-import {RiMenu2Line} from "react-icons/ri"
+
+import { RiMenu2Line } from "react-icons/ri"
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {AiOutlineLogin} from "react-icons/ai"
+import { AiOutlineLogin } from "react-icons/ai";
+
+
+
 
 export function OffCanvas() {
   const [show, setShow] = useState(false);
@@ -18,80 +28,95 @@ export function OffCanvas() {
     <Contenedor >
 
       <div className="main-container">
-        <div className="disabled">
-          <Button id="button" variant="primary" onClick={handleShow}>
-            <Container>
-             Login<RiMenu2Line className="mt-2" id="menu" />
+
+
+        <div className="main disabled">
+          <Button id="button" onClick={handleShow}>
+            <Container >
+
+              <RiMenu2Line className="" id="menu" />
+
+
+
             </Container>
           </Button>
 
-          <Offcanvas   show={show} onHide={handleClose}>
-            <Canvas >
-            <Offcanvas.Header className="canvas-header"  closeButton>
-              <Offcanvas.Title>TransDigitalCoop cambio</Offcanvas.Title>
-            </Offcanvas.Header>
+          <Offcanvas show={show} onHide={handleClose}  >
+            <Canvas className="canvas" >
+              <Offcanvas.Header className="canvas-header" closeButton>
+                <Offcanvas.Title>TransDigitalCoop</Offcanvas.Title>
+              </Offcanvas.Header>
+
+              <Offcanvas.Body>
           
-            <Offcanvas.Body>
-
-
-{/* Menu creado en esta pagina */}
-                <Menu> 
-
-
-                  <div className="button">
-                  <Link onClick={handleClose} to="/">Home</Link>
-                  </div>
-                 <div className="button">
-                 <Link onClick={handleClose} to="/about">About</Link>
-                 </div>
-                 <div className="button">
-                 <Link onClick={handleClose} to="/servicios">Servicios</Link>
-                 </div>
-
-                
-               
-                 
-                
-
-                
-
-             
-
-                </Menu>
-             
-            </Offcanvas.Body>
-
+              <Accordion >
+      <AccordionItem >
+        <AccordionTitle >
+          <div type="button" className="division">
+            <div className="contenido-icon">
+            <MdOutlineCardTravel className="icon-servicios" />
+            </div>
            
-                
+          <h2 className="tittle-servicios" >Servicios</h2>
+          </div>
+         
+        </AccordionTitle>
+        <div>
+          <p>Contenido de la sección 1.</p>
+        </div>
+      </AccordionItem>
+      <AccordionItem >
+        <AccordionTitle >
+          <div type="button" className="division">
+            <div className="contenido-icon">
+            <GrContact className="icon-servicios" />
+            </div>
+           
+          <h2 className="tittle-servicios" >Contacto</h2>
+          </div>
+         
+        </AccordionTitle>
+        <div>
+          <p>Contenido de la sección 1.</p>
+        </div>
+      </AccordionItem>
+    </Accordion>
+
+              </Offcanvas.Body>
+
+
+
             </Canvas>
-           
+
           </Offcanvas>
         </div>
 
-        <div className="title-content">
+        <div className="title-content main">
           <h2>TransDigitalCoop</h2>
         </div>
 
-        <div className="buscar disabled-login">
-          <input type="search" placeholder="Search" />
-        </div>
+      
+
 
         <div className="login-logo " >
 
-        <Link className="link-to" to="/login">
-          <a>
-          <AiOutlineLogin className="login-icon mt-1"/>
-          </a>
-        
-    
-        </Link>
-        
+          <Link className="link-to" to="/login">
+
+            <AiOutlineLogin className="login-icon mt-1" />
+
+
+
+
+          </Link>
+
+
+
         </div>
 
-      
+
       </div>
 
-   
+
     </Contenedor>
   );
 }
@@ -102,27 +127,27 @@ export function OffCanvas() {
 //CSS Styles ---------------------------------------------------
 
 
-const Divider = styled.div`
+// const Divider = styled.div`
 
-  height: 1px;
-  width: 100%;
-  background: rgb(230, 230, 230);
-  margin: 0 0 0 0;
-  box-shadow: 2px 2px 5px #999;
+//   height: 1px;
+//   width: 100%;
+//   background: rgb(230, 230, 230);
+//   margin: 0 0 0 0;
+//   box-shadow: 2px 2px 5px #999;
 
-  @media (min-width: 1100px) {
-    .disabled {
-        display: none;
-        width: 0;
-        height: 0;
-        margin: 0;
-    }
-  
-}
+//   @media (min-width: 1100px) {
+//     .disabled {
+//         display: none;
+//         width: 0;
+//         height: 0;
+//         margin: 0;
+//     }
+
+// }
 
 
-    
-`;
+
+// `;
 
 export const Dividere = styled.div`
   height: 1px;
@@ -135,6 +160,12 @@ export const Dividere = styled.div`
 `
 
 const Menu = styled.div`
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
 
     a:hover{
        transform: scale(1.2);
@@ -154,10 +185,13 @@ const Canvas = styled.div`
 `
 
 
+
 const Contenedor = styled.div`
 
+
+
 .link-to {
-  color: black;
+  color:  black;
   :hover {
       color: #6F5E76;
     } 
@@ -168,13 +202,16 @@ align-items: center;
   
   height: 6.5%;
 
-.canvas {
-    background-color: red;
-}
+
 
 .main-container{
  display: grid;
  grid-template-columns: repeat(16,1fr);
+ background-color:  #132740;
+ color:white;
+ 
+ 
+ 
 
 
 
@@ -189,21 +226,49 @@ align-items: center;
 }
   
   #button {
-    background-color: transparent;
+    background-color: #00ACC9;
     border: none;
-    padding: 0;
-    margin: 0.5rem;
+    border-radius: 0;
+    
+    :hover {
+      background-color: #6F5E76;
+    } 
+    height: 100%;
+    margin: 0;
+    
     
   }
 
-  #menu {
-    color: black;
-    font-size: 1.5rem;
+ 
 
-    :hover {
-      color: #6F5E76;
-    } 
+ 
+
+  #menu {
+    color: white;
+    font-size: 1.5rem;
+    
+
+  
+
+  
    
+  }
+
+
+  //header
+
+  
+
+  @media (min-width: 768px) {
+    .botones-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+    grid-column-start: 3;
+    grid-column-end: 12;
+
+  }
   }
 
   
@@ -268,4 +333,9 @@ align-items: center;
     }
   
 }
+
+
+
+
+
 `;

@@ -3,6 +3,7 @@ import { request } from '../helper/helper';
 import styled from 'styled-components';
 import { Row } from 'react-bootstrap';
 import DataGrid from '../grid/grid';
+import {Container} from 'react-bootstrap';
 
 
     const columns = [
@@ -45,7 +46,9 @@ export default class EmpleadosBuscar extends React.Component {
     render() {
         return (
         
-        <Container id='empleados-buscar-container'>
+        <Containerlocal id='empleados-buscar-container'>
+
+            <Container>
             <Row>
                 <h1>Buscar empleados</h1>
             </Row>
@@ -55,13 +58,14 @@ export default class EmpleadosBuscar extends React.Component {
                 
           
             </Row>
-        </Container>);
+            </Container>
+        </Containerlocal>);
     }
 }
 
-const Container = styled.div`
+const Containerlocal = styled.div`
 
-        margin-top: 10rem;
+        margin-top: 2rem;
         text-align: center;
 
    h1 {

@@ -1,6 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Accordion, AccordionItem, AccordionTitle } from "./accordeon.component";
+import {MdOutlineCardTravel} from "react-icons/md"
+import {GrContact} from "react-icons/gr"
+import "./sidebar.css"
+
+
+
+
+
+
+
+
+
+
 
 export default class Sidebar extends React.Component {
     constructor(props) {
@@ -11,33 +25,83 @@ export default class Sidebar extends React.Component {
     }
   
     render() { 
-        return ( <Contenedor className='enabled'>
-                
-                <Link className='button' to="/">
-                    <h6>Home</h6></Link>
-             
-               
-                <Link className='button' to="/about"><h6>About</h6></Link>
-               
+        return ( <Contenedor className='enabled main-contenido'>
+
+<Accordion >
+      <AccordionItem >
+        <AccordionTitle >
+          <div type="button" className="division">
+          
+            <MdOutlineCardTravel className="icon-servicios" />
+            
            
+          <h2 className="tittle-servicios" >Servicios</h2>
+          </div>
+         
+        </AccordionTitle>
+        <div className='despliegue'>
+          <p>Contenido de la sección 1.</p>
+          <p>Contenido de la sección 1.</p>
+          <p>Contenido de la sección 1.</p>
+          <p>Contenido de la sección 1.</p>
+          <p>Contenido de la sección 1.</p>
+        </div>
+      </AccordionItem>
+      <AccordionItem >
+        <AccordionTitle >
+          <div type="button" className="division">
+            
+            <GrContact className="icon-servicios" />
+         
+           
+          <h2 className="tittle-servicios" >Contacto</h2>
+          </div>
+         
+        </AccordionTitle>
+        <div className='despliegue'>
+          <p>Contenido de la sección 1.</p>
+        </div>
+      </AccordionItem>
+    </Accordion>
 
-                <Link className='button' to="/servicios"><h6>Servicios</h6></Link>
 
-               
-                    
 
         </Contenedor> );
     }
 }
  
 const Contenedor = styled.div`
+
+
+    background-color: #000080;
+
+      h6 {
+        color: black;
+      }
+
+    .icon {
+      color: white;
+      font-size: 2rem;
+      margin-left: 7.5rem;
+      margin-top: 4rem;
+    }
+    
+
+    #icon-settings {
+ 
+    grid-row-start: 4;
+    grid-row-end: 5;
+    }
+
+
    
-    height: 79.2vh;
+    height: 82.9vh;
+   
     overflow-y: scroll;
     scroll-behavior: smooth;
-    background-color: #a6ffff7f;
-  display: flex;
-  flex-direction: column;
+    
+    
+
   align-items: center;
   
   

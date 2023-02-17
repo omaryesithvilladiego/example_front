@@ -25,16 +25,17 @@ const Contenedor = styled.div`
 
   body {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 
-  background-color: black;
+  
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 40px;
   color: white;
+  background-color: red;
 
 
 
