@@ -7,6 +7,7 @@ import { Accordion, AccordionItem, AccordionTitle } from "../accordeon.component
 import "./offcanva.css"
 import {MdOutlineCardTravel} from "react-icons/md"
 import {GrContact} from "react-icons/gr"
+import "../sidebar.css"
  
 
 
@@ -14,6 +15,7 @@ import { RiMenu2Line } from "react-icons/ri"
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
+import Sidebar from "../sidebar";
 
 
 
@@ -41,18 +43,18 @@ export function OffCanvas() {
             </Container>
           </Button>
 
-          <Offcanvas show={show} onHide={handleClose}  >
+          <Offcanvas className="offcanva" show={show} onHide={handleClose}  >
             <Canvas className="canvas" >
-              <Offcanvas.Header className="canvas-header" closeButton>
+              <Offcanvas.Header className="canvas-header sidebar-title" closeButton>
                 <Offcanvas.Title>TransDigitalCoop</Offcanvas.Title>
               </Offcanvas.Header>
-
+              
               <Offcanvas.Body>
           
               <Accordion >
-      <AccordionItem >
+      <AccordionItem className="" >
         <AccordionTitle >
-          <div type="button" className="division">
+          <div type="button" className="division despliegue">
             <div className="contenido-icon">
             <MdOutlineCardTravel className="icon-servicios" />
             </div>
@@ -61,13 +63,13 @@ export function OffCanvas() {
           </div>
          
         </AccordionTitle>
-        <div>
+        <div className="">
           <p>Contenido de la sección 1.</p>
         </div>
       </AccordionItem>
       <AccordionItem >
         <AccordionTitle >
-          <div type="button" className="division">
+          <div type="button" className="division despliegue ">
             <div className="contenido-icon">
             <GrContact className="icon-servicios" />
             </div>

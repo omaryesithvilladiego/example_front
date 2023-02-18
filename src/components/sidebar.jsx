@@ -27,6 +27,8 @@ export default class Sidebar extends React.Component {
     render() { 
         return ( <Contenedor className='enabled main-contenido'>
 
+          <h2 className='sidebar-title'>Navegación</h2>
+
 <Accordion >
       <AccordionItem >
         <AccordionTitle >
@@ -73,7 +75,7 @@ export default class Sidebar extends React.Component {
 const Contenedor = styled.div`
 
 
-    background-color: #000080;
+    background-color: #2980b9;
 
       h6 {
         color: black;
